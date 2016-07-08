@@ -1,0 +1,44 @@
+Downsize( htmlString, options )
+
+options
++ rounding : bool (?)
++ words 	 : int
++ characters : int
++ paragraphs : int
++ truncateToTag : string
+
+
+AllowedElements
+[
+	"a", "abbr", "b", "bdi", "bdo", "blockquote", "br", "cite", "code", "data", "dd", "del" , "dfn", "dl", "dt", "em", "i", "ins", "kbd", "mark", "p", "pre", "q", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "ul", "ol", "li"
+]
+
+
+IgnoredElements
+[
+    "area", "audio", "map", "track", "video", "embed", "object", "param", "source", "canvas", "noscript", "script", "iframe", "style"
+]
+
+
+ParagraphElements
+[
+	ul, ol, p, pre, code, blockquote,
+	h1, h2, h3, h4, h5, h6
+]
+Note:
+	Used by the paragraph delimitor.
+
+
+VoidElements
+[
+	area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr 
+]
+Note:
+	Used to recognize elements for which closing tags are not expected.
+
+
+
+Rules:
+isAllowed (keep text and tags)
+isDisallowed (keep text)
+isIgnored (keep none)
